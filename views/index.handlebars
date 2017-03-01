@@ -1,0 +1,81 @@
+<div class=container>
+  <div class="jumbotron">
+        <h1></h1>
+        <h2>The Scraper Intel!</h2>   
+        
+  </div>
+<div class="row"> <!-- Left-->
+  <div class="col-xs-6 col-md-3">
+          
+            <form method="post" type="text" action="/addComment/{{id}}"  >
+            
+                <div class="textDiv">
+                      
+                    <label>
+                      <textarea class="form-control" id="comment" name="comment" wrap="soft" type="text" placeholder=" comment here" required></textarea>
+                    </label>                
+                
+                
+                    <div class="buttonDiv">    
+                          <button  class="addButton" type="submit" value="submit
+                          ">Add</button>
+                    </div>
+                </div>
+            </form>
+  </div> 
+
+
+  <div class="col-xs-6 col-md-6"> <!-- Middle-->
+          <div class="textDiv">
+              <div class="storyDiv">
+                      <h3>Story Headline: {{articleNum}} of {{totalArticles}}</h3>
+                      <hr>
+                      <h4>{{artTitle}}</h4>                   
+                      
+                      <a href={{urlLink}} target="_blank">Click to Read the Full Story</a>
+                      <br>
+              </div>
+            
+
+                      
+              <div class="buttonDiv">   
+                  <tr>
+                      <td>
+                          <form method='GET' action="/prevArticle">
+                              <button id="leftArrow" class="glyphicon prevButton">Previous</button>
+                          </form>
+                      </td> 
+                      <td>
+                          <form method='GET' action="/nextArticle">
+                              <button id="rightArrow" class="glyphicon nextButton"> Next</button>
+                          </form>
+                      </td>
+                    
+                  </tr>
+        
+              </div>
+          </div>                 
+  </div>
+
+
+  <div class="col-xs-6 col-md-3"> <!-- Right-->
+    
+            <div class="textDiv">
+                  <div id="commentArea">
+                      <h5 id="textLeft">{{userComment}}</h5>
+                  </div>
+
+                  <div>
+                      <form method='POST' action="/delComment/{{id}}">
+                            
+                            <div class='buttonDiv'>
+                                      <button type="submit" id="delComment" name="delComment" class="delButton">Delete</button>
+                            </div> 
+
+                      </form>
+                  </div>
+            </div>
+
+  </div> 
+
+</div> 
