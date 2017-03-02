@@ -36,7 +36,7 @@ module.exports = function(app){
 		var i=0;
 
 //cheerio scrape
-app.get("/scrape", function(req, res) {
+app.get("/", function(req, res) {
 
 	request('http://www.forbes.com/', function (error, response, html) {
 
@@ -188,10 +188,8 @@ app.get("/scrape", function(req, res) {
 							i--;
 							res.redirect('/');
 							}
-				       
 				    }
 				});
-
 		}); 
 
 		//next news article
